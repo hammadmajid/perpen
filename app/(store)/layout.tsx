@@ -5,11 +5,9 @@ import { ThemeProvider } from "@mui/material/styles";
 import theme from "@/utils/theme";
 import CssBaseline from "@mui/material/CssBaseline";
 import Header from "@/components/header";
-import { ClerkProvider } from "@clerk/nextjs";
 import { TRPCReactProvider } from "@/trpc/react";
-import { neobrutalism } from "@clerk/themes";
-import { CartProvider } from "@/hooks/cart-context";
 import Footer from "@/components/footer";
+import React from "react";
 
 const roboto = Roboto({
 	weight: ["300", "400", "500", "700"],
@@ -34,23 +32,11 @@ export default function RootLayout({
 				<AppRouterCacheProvider>
 					<ThemeProvider theme={theme}>
 						<CssBaseline />
-						<ClerkProvider
-							appearance={{
-								baseTheme: neobrutalism,
-								variables: {
-									borderRadius: "0px",
-									colorPrimary: "#FF6B35",
-								},
-							}}
-						>
 							<TRPCReactProvider>
-								<CartProvider>
 									<Header />
 									{children}
 									<Footer />
-								</CartProvider>
 							</TRPCReactProvider>
-						</ClerkProvider>
 					</ThemeProvider>
 				</AppRouterCacheProvider>
 			</body>
