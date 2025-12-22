@@ -22,7 +22,7 @@ import { PortableText } from "@portabletext/react";
 import { notFound } from "next/navigation";
 import type { RouterOutputs } from "@/trpc/react";
 import { ArrowLeftIcon } from "@phosphor-icons/react/dist/ssr/ArrowLeft";
-import AddToCart from "@/components/cart/add";
+import {ShoppingCartSimpleIcon} from "@phosphor-icons/react/ShoppingCartSimple";
 
 interface SingleProductProps {
 	product: RouterOutputs["inventory"]["getBySlug"];
@@ -131,10 +131,20 @@ export default function SingleProduct({ product }: SingleProductProps) {
 							</Typography>
 						)}
 
-						{/* Add to Cart Button */}
-						<AddToCart itemId={product._id} slug={product.slug.current} />
+						{/* TODO: Add to Cart */}
+                        <Button
+                            size="small"
+                            variant="contained"
+                            color="primary"
+                            fullWidth
+                            sx={{ textTransform: "none", fontWeight: 500, py: 1.5, px: 4 }}
+                            startIcon={<ShoppingCartSimpleIcon weight="bold" />}
+                        >
+                            Add to Cart
+                        </Button>
 
-						{/* Product Specifications */}
+
+                        {/* Product Specifications */}
 						{product.specifications && product.specifications.length > 0 && (
 							<Box sx={{ mb: 3, my: 4 }}>
 								<Typography variant="h6" sx={{ mb: 2, fontWeight: 600 }}>

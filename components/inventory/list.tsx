@@ -1,17 +1,17 @@
 import {
-	Typography,
-	Grid,
-	Card,
-	CardMedia,
-	CardContent,
-	CardActions,
-	Chip,
-	Box,
+    Typography,
+    Grid,
+    Card,
+    CardMedia,
+    CardContent,
+    CardActions,
+    Chip,
+    Box, Button,
 } from "@mui/material";
 import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
 import type { RouterOutputs } from "@/trpc/react";
-import AddToCart from "../cart/add";
+import {ShoppingCartSimpleIcon} from "@phosphor-icons/react/ShoppingCartSimple";
 
 interface ProdutctListProps {
 	products: RouterOutputs["inventory"]["getAll"];
@@ -122,10 +122,17 @@ export default function ProdutctList({ products }: ProdutctListProps) {
 						</Link>
 
 						<CardActions sx={{ p: 2, pt: 0, gap: 1 }}>
-							<AddToCart
-								itemId={product._id}
-								slug={product.slug.current}
-							/>
+                            {/* TODO: Add to Cart */}
+                            <Button
+                                size="small"
+                                variant="contained"
+                                color="primary"
+                                fullWidth
+                                sx={{ textTransform: "none", fontWeight: 500, py: 1.5, px: 4 }}
+                                startIcon={<ShoppingCartSimpleIcon weight="bold" />}
+                            >
+                                Add to Cart
+                            </Button>
 						</CardActions>
 					</Card>
 				</Grid>
