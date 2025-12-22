@@ -53,14 +53,6 @@ export default function Footer() {
 						Resources
 					</Typography>
 					<Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-						<a
-							href="https://github.com/hammadmajid/prepen"
-							target="_blank"
-							rel="noopener noreferrer"
-							style={{ textDecoration: "none", color: "#222" }}
-						>
-							GitHub
-						</a>
 						<Link
 							href="/privacy"
 							style={{ textDecoration: "none", color: "#222" }}
