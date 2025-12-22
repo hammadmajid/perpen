@@ -1,14 +1,11 @@
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { Button } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import InputBase from "@mui/material/InputBase";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { MagnifyingGlassIcon } from "@phosphor-icons/react/dist/ssr/MagnifyingGlass";
-import { SignInIcon } from "@phosphor-icons/react/dist/ssr/SignIn";
 import Link from "next/link";
-import CartHeaderButton from "@/components/cart/cart-header-button";
 
 export default function Header() {
 	return (
@@ -60,36 +57,7 @@ export default function Header() {
 							}}
 						/>
 					</Box>
-					<CartHeaderButton />
-					<SignedOut>
-						<SignInButton>
-							<Button
-								variant="contained"
-								color="secondary"
-								startIcon={<SignInIcon weight="bold" />}
-							>
-								Sign In
-							</Button>
-						</SignInButton>
-					</SignedOut>
-					<SignedIn>
-						<UserButton
-							appearance={{
-								elements: {
-									avatarBox: {
-										borderRadius: 0,
-										border: "2px solid #000",
-										boxShadow: "4px 4px 0 #000",
-										fontWeight: 900,
-										width: "48px",
-										height: "48px",
-										minWidth: "48px",
-										minHeight: "48px",
-									},
-								},
-							}}
-						/>
-					</SignedIn>
+					<Button>🛒 0</Button>
 				</Box>
 			</Toolbar>
 		</AppBar>
