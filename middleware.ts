@@ -1,7 +1,7 @@
 import { clerkMiddleware } from "@clerk/nextjs/server";
 
 export default clerkMiddleware({
-	authorizedParties: ["https://prepen.bine.codes", "https://preview.prepen.bine.codes"],
+	authorizedParties: ["https://www.prepen.store/", "https://preview.prepen.store/"],
 });
 
 export const config = {
